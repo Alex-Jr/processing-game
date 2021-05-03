@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.OutputStream; 
 import java.io.IOException; 
 
-public class LP3 extends PApplet {
+public class Jogo extends PApplet {
 
 Player p = new Player(400, 400, 50); // é mto útil o player ser global
 
@@ -38,7 +38,7 @@ public void setup() {
   props.add(new Instrucoes(15, 750, 50));
 }
 
-public void draw() { //<>//
+public void draw() {
   background(0);
   
   // responsável por parar o jogo caso fique sem vidas -- poderia ter uma forma reiniciar aqui
@@ -111,7 +111,7 @@ public void checkCollisions(Entity entity, int index) { // passar o index além 
           
      // apaga tudo que colidiu
      if(colidiu)  {
-       addScore(50); //<>//
+       addScore(50);
        entities.remove(i); // i é sempre "other" entity
        if(entity != p) entities.remove(index); // index é a entidade atual, por isso precisamos verificar para não apagar o player
      }
@@ -142,7 +142,7 @@ public class Bullet extends Entity {
   }
   
   
-  public void draw() { //<>// //<>//
+  public void draw() { //<>//
     fill(255);
     
     pushMatrix();
@@ -198,7 +198,7 @@ public abstract class Enemy extends Entity{
     ellipse(0, 0, tamanho, tamanho);
     
     popMatrix();
-   } //<>//
+   }
 }
 public abstract class Entity { 
   protected PVector pos; // PVector deixa mais limpo o código, é usado como pos.x e pos.y
@@ -669,7 +669,7 @@ public enum Times {  // simples enum armazenar os times
 }
   public void settings() {  size(800, 800); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "LP3" };
+    String[] appletArgs = new String[] { "Jogo" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

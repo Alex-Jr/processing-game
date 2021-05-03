@@ -18,7 +18,7 @@ public class Bullet extends Entity {
   }
   
   
-  public void draw() { //<>//
+  public void draw() { //<>// //<>//
     fill(255);
     
     pushMatrix();

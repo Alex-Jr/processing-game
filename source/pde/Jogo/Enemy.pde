@@ -37,5 +37,5 @@ public abstract class Enemy extends Entity{
     ellipse(0, 0, tamanho, tamanho);
     
     popMatrix();
-   }
+   } //<>//
 }
