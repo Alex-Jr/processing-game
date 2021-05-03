@@ -1,16 +1,15 @@
 public class Seguidor extends Enemy{   
-  public Seguidor(int x, int y, int tamanho) {
-    super(x, y, tamanho, 3);
+  public Seguidor(float x, float y, float tamanho, float speed) {
+    super(x, y, tamanho, speed, color(0, 0, 255));
   }
   
+  // sempre ira utilizar a pos atual do jogador como nova direção
   public void move() {
-   if(
-      (pos.x <= direction.x + 25 || pos.x >= direction.x - 25)
-      && (pos.y <= direction.y + 25 && pos.y >= direction.y - 25)
-    ) {
-      direction.x = p.getPosX();
-      direction.y = p.getPosY();
-    }
+    int x = (int) p.getPosX();
+    int y = (int) p.getPosY();
+    
+    direction.x = RNG(x - 100, x + 100);
+    direction.y = RNG(y - 100, y + 100);
 
    if(pos.x < direction.x) pos.x += speed.x;
    if(pos.x > direction.x) pos.x -= speed.x;
